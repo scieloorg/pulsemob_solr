@@ -123,7 +123,6 @@
 	<field name="journal_title" type="text_general" indexed="true" stored="true"/>
 	<field name="journal_abbreviated_title" type="text_general" indexed="true" stored="true"/>
 	<field name="original_title" type="text_general" indexed="true" stored="true"/>
-	<field name="journal" type="text_general" indexed="true" stored="true"/>
 	<field name="original_abstract" type="text_general" indexed="true" stored="true"/>
 	<field name="publication_date" type="tdate" indexed="true" stored="true"/>
 	<field name="processing_date" type="tdate" indexed="true" stored="true"/>
