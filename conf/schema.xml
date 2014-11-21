@@ -123,22 +123,21 @@
 	<field name="journal_title" type="text_general" indexed="true" stored="true"/>
 	<field name="journal_abbreviated_title" type="text_general" indexed="true" stored="true"/>
 	<field name="original_title" type="text_general" indexed="true" stored="true"/>
-	<field name="journal" type="text_general" indexed="true" stored="true"/>
 	<field name="original_abstract" type="text_general" indexed="true" stored="true"/>
 	<field name="publication_date" type="tdate" indexed="true" stored="true"/>
 	<field name="processing_date" type="tdate" indexed="true" stored="true"/>
 	<field name="journal_acronym" type="string" indexed="true"/>
-	<field name="subject_areas" type="string" multivalued="true"/> 
-	<field name="wos_subject_areas" type="string" multivalued="true"/> 
+	<field name="subject_areas" type="string" multiValued="true"/> 
+	<field name="wos_subject_areas" type="string" multiValued="true"/> 
 	<field name="original_language" type="string" indexed="true" stored="true"/>
-	<field name="languages" type="string" indexed="true" stored="true" multivalued="true"/>
+	<field name="languages" type="string" indexed="true" stored="true" multiValued="true"/>
 	<field name="document_type" type="string" indexed="false" stored="true"/>
 	<field name="authors" type="text_general" indexed="true" stored="true" multiValued="true"/>
-	<field name="first_author" type="scielo_author"/>
+	<field name="first_author" type="text_general" indexed="true" stored="true"/>
 	<field name="corporative_authors" type="text_general" indexed="true" stored="true" multiValued="true"/>
+	<field name="publisher_id" type="string" indexed="false" stored="true"/>
+	<field name="scielo_domain" type="string" indexed="false" stored="true"/>
 
-	<dynamicField name="pdf_url_*" type="string" indexed="false" stored="true"/>
-	<dynamicField name="html_url_*" type="string" indexed="false" stored="true"/>
 	<dynamicField name="translated_abstracts_*" type="text_general" indexed="true" stored="true"/>
 	<dynamicField name="translated_titles_*" type="text_general" indexed="true" stored="true"/>
 	<dynamicField name="keywords_*"  type="text_general" indexed="true" stored="true" multiValued="true"/>
@@ -155,7 +154,7 @@
         field name or dynamic field, rather than reporting them as an error. 
         alternately, change the type="ignored" to some other type e.g. "text" if you want 
         unknown fields indexed and/or stored by default --> 
-   <!--dynamicField name="*" type="ignored" multiValued="true" /-->
+   <dynamicField name="*" type="ignored" multiValued="true" />
    
  <!-- Field to use to determine and enforce document uniqueness. 
       Unless this field is marked with required="false", it will be a required field
@@ -602,7 +601,7 @@
      -->
     <fieldType name="point" class="solr.PointType" dimension="2" subFieldSuffix="_d"/>
 
-    <!-- A specialized field for geospatial search. If indexed, this fieldType must not be multivalued. -->
+    <!-- A specialized field for geospatial search. If indexed, this fieldType must not be multiValued. -->
     <fieldType name="location" class="solr.LatLonType" subFieldSuffix="_coordinate"/>
 
     <!-- An alternative geospatial field type new to Solr 4.  It supports multiValued and polygon shapes.
