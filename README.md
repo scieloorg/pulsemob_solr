@@ -11,6 +11,6 @@ pulsemob_solr
 
 5) Start solr:
 
-cd solr-4.10.1/example
+cd solr-4.10.2/example
 
 nohup java -jar start.jar &
