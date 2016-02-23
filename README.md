@@ -1,16 +1,34 @@
-pulsemob_solr
-=============
+# 1. Install
 
-1) Download solr 4.10.2 from https://www.apache.org/dyn/closer.cgi/lucene/solr/4.10.2
+```sh
+$ yum install -y wget java unzip lsof
+$ wget http://ftp.unicamp.br/pub/apache/lucene/solr/5.4.0/solr-5.4.0.tgz
+$ tar -xvzf solr-5.4.0.tgz
+$ ./solr-5.4.0/bin/install_solr_service.sh
+```
+# 2. Configure
 
-2) Unpack (tar -xvzf solr-4.10.2.tgz)
+Create core.
+```sh
+$ su - solr
+$ /opt/solr/bin/solr create_core -c pulsemob_core
+```
+Delete default settings.
+```sh
+$ rm -rvf /var/solr/data/pulsemob_core/conf
+$ rm -rvf /var/solr/data/pulsemob_core/core.properties
+```
+Checkout configuration files.
+```sh
+$ cd /var/solr/data/pulsemob_core
+$ git clone git://github.com/Infobase/pulsemob_solr.git
+```
 
-3) If you don't use the solr collection that is available in the default solr install (solr-4.10.2/example/solr/collection1), create a new collection using it as template
-
-4) Extract the sources from this rep and copy them to the conf directory of your collection, overwritting existing files
-
-5) Start solr:
-
-cd solr-4.10.2/example
-
-nohup java -jar start.jar &
+# 3. Run
+```sh
+$ service solr start
+```
+If solr service is already running, run:
+```sh
+$ service solr restart
+```
