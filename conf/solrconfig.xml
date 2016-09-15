@@ -868,7 +868,7 @@
       <str name="wt">json</str>
       <str name="rows">50</str>
       <str name="sort">indexed_date desc, publication_date desc</str>
-      <str name="fl">image_upload_path,translated_abstracts_pt, translated_abstracts_es, translated_abstracts_en, original_abstract, translated_titles_pt, translated_titles_es, translated_titles_en, original_title, keywords_pt, keywords_es, keywords_en, id, first_author, journal_id, publication_date, subject_areas_ids</str>
+      <str name="fl">image_upload_path,translated_abstracts_pt, translated_abstracts_es, translated_abstracts_en, original_abstract, translated_titles_pt, translated_titles_es, translated_titles_en, original_title, keywords_pt, keywords_es, keywords_en, id, first_author, journal_id, publication_date, publication_date_str, subject_areas_ids</str>
     </lst>
   </requestHandler>
   <requestHandler name="/search" class="solr.SearchHandler">

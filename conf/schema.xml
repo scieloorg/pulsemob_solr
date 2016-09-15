@@ -131,6 +131,7 @@
 	<field name="original_abstract" type="text_general" indexed="true" stored="true"/>
 	<field name="translated_abstracts" type="text_general" indexed="true" stored="true" multiValued="true"/>
 	<field name="publication_date" type="tdate" indexed="true" stored="true"/>
+	<field name="publication_date_str" type="string" indexed="true" stored="true"/>
 	<field name="journal_acronym" type="string" indexed="true"/>
 	<field name="subject_areas" type="string" multiValued="true"/>
 	<field name="subject_areas_ids" type="long" multiValued="true"/>
